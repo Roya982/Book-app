@@ -2,31 +2,46 @@
 <html lang="en">
 
 <head>
-    <title>Book Collection</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Book</title>
+    <link rel="stylesheet" href="/styles/showEjsTest.css">
 </head>
 
 <body>
     <header>
-        <nav>
-            <h1 class="header-nav">Best Books!</h1>
-            <button class="button1"></button>
-        </nav>
-        <h3>Search Result</h3>
+        <h1>Best Books!</h1>
+        <button>Show</button>
     </header>
     <main>
-        <section>
-            <% searchResults.forEach( book=> { %>
-                <img src="<%=book.img%>">
-                <h3>
-                    <%= book.title %>
-                </h3>
-                <p>
-                    <%= book.description %>
-                </p>
-                <% }) %>
-        </section>
+        <div class="serach-head">
+            <h3>Search Result</h3>
+        </div>
+        </div>
+        <% searchResults.forEach( book=> { %>
+            <div class="container">
+                <img src="<%=book.img %>" alt="">
+                <h5><%= book.title %></h5>
+                <h6><%= book.author %></h6>
+                <!-- <p><%= book.description %></p> -->
+                <form action="/addFav" method="post">
+                    <input type="text" name="title" value="<%=book.title %>" hidden>
+                    <input type="text" name="author" value="<%=book.author %>" hidden>
+                    <input type="text" name="description" value="<%=book.description %>" hidden>
+                    <input type="text" name="isbn" value="<%=book.industryIdentifiers ? book.industryIdentifiers.identifier:'no isbn' %>" hidden>
+                    <input type="text" name="imge_url" value="<%=book.img %>" hidden>
+                    <button>Add To Fav</button>
+                </form>
+            </div>
+        <% }) %>
     </main>
+    <footer>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </footer>
 </body>
 
 </html>
