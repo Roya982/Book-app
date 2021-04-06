@@ -1,0 +1,19 @@
+<form class="form" action="/searches" method="post">
+    <input type="text" name="search" placeholder="Enter a title or author" required>
+    <br>
+    <fieldset id="title" class="radio">
+        <label for="title">
+            <span>Title!!!!</span>
+            <input type="radio" name="search" value="title" required>
+        </label>
+    </fieldset>
+    <br>
+    <fieldset id="author" class="radio">
+        <label for="author">
+            <span>Author</span>
+            <input type="radio" name="search" value="author" required>
+        </label>
+    </fieldset>
+    <br>
+    <button id="submit" type="submit">Search the Google Books API</button>
+</form>

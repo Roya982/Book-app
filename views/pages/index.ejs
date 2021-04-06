@@ -2,41 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Book</title>
-    <link rel="stylesheet" href="/styles/showEjsTest.css">
+    <%- include('../layout/head') %> 
 </head>
 
 <body>
     <header>
-        <h1>Best Books!</h1>
-        <button>Show</button>
+        <%- include('../layout/header') %> 
     </header>
     <main>
         <div class="serach-head">
             <h3>Search Result</h3>
-            <h4>Count <%= count %></h4>
+            <h4 class="count">Count <%= count %></h4>
         </div>
         </div>
+       <button class="searchbtn"><a class="search" href="/search/new">Search For Books</a></button> 
         <% result.forEach( book=> { %>
             <div class="container">
-                <img src="<%= book.imge_url %>" alt="">
-                <h5><%= book.title %></h5>
-                <h6><%= book.author %></h6>
-                <h6>Isbn <%=book.industryIdentifiers ? book.industryIdentifiers.identifier : 'no isbn' %></h6>
+                <img class="imgdet" src="<%= book.imge_url %>" alt="">
+                <h5 class="titledet"><%= book.title %></h5>
+                <h6 class="autherdet"><%= book.author %></h6>
+                <h6>Isbn <%=(book.industryIdentifiers && book.industryIdentifiers[0].identifier) ? book.industryIdentifiers[0].identifier : 'no isbn' %></h6>
                 <!-- <p><%= book.description %></p> -->
-                <a href="/books/<%=book.id%>">Show</a>
+                <button class="buttonidx"><a href="/books/<%=book.id%>">Show</a></button>
             </div>
         <% }) %>
     </main>
     <footer>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <%- include('../layout/footer') %> 
     </footer>
-</body>
+</body> 
 
 </html>

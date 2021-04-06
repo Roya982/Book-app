@@ -1,0 +1,45 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Book</title>
+    <link rel="stylesheet" href="/styles/showEjsTest.css">
+</head>
+
+<body>
+    <header>
+        <h1>Best Books!</h1>
+        <button>Show</button>
+    </header>
+    <main>
+        <div class="serach-head">
+            <h3>Search Result</h3>
+        </div>
+        </div>
+        <div class="container">
+            <form action="/update/<%= data.id%>?_method=PUT" method="post">
+                <label>Title</label>
+                <input type="text" name='title' value="<%= data.title %>">
+                <label>Author</label>
+                <input type="text" name='author' value="<%= data.author %>">
+                <label>Description</label>
+                <textarea name="description" id="" cols="30" rows="10">
+                    <%= data.description %>
+                </textarea>
+                <button>Update</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </footer>
+</body>
+
+</html>
