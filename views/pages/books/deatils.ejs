@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include('../../layout/head') %> 
+    <%- include('../layout/head') %> 
 </head>
 
 <body>
     <header>
-        <%- include('../../layout/header') %> 
+        <%- include('../layout/header') %> 
     </header>
     <main>
         <div class="serach-head">
@@ -17,7 +17,7 @@
             <div class="container">
                 <img class="imgdet" src="<%=data.imge_url %>" alt="">
                 <h5 class="titledet"><%= data.title %></h5>
-                <h6 class="autherdet"><%= data.author %></h6>
+                <h6 class="autherdet"><%= data.name %></h6>
                 <p><%= data.description %></p>
                 <button class="updetailbtn"><a href="/update/<%=data.id %>">Update</a></button>
                 <form action="/delete/<%=data.id %>?_method=DELETE" method="post">
@@ -26,7 +26,7 @@
             </div>
     </main>
     <footer>
-        <%- include('../../layout/footer') %> 
+        <%- include('../layout/footer') %> 
     </footer>
 </body>
 

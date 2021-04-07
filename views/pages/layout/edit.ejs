@@ -1,19 +1,13 @@
-<form class="form" action="/searches" method="post">
-    <input type="text" name="search" placeholder="Enter a title or author" required>
-    <br>
-    <fieldset id="title" class="radio">
-        <label for="title">
-            <span>Title!!!!</span>
-            <input type="radio" name="search" value="title" required>
-        </label>
-    </fieldset>
-    <br>
-    <fieldset id="author" class="radio">
-        <label for="author">
-            <span>Author</span>
-            <input type="radio" name="search" value="author" required>
-        </label>
-    </fieldset>
-    <br>
-    <button id="submit" type="submit">Search the Google Books API</button>
-</form>
+<div id="update-form" class="container">
+    <form class="form" action="/update/<%= data.id%>?_method=PUT" method="post">
+        <!-- <label>Title</label> -->
+        <input class="updateIn" type="text" placeholder="title" name='title' value="<%= data.title %>">
+        <!-- <label>Author</label> -->
+        <input class="updateIn" type="text" placeholder="author" disabled name='author' value="<%= data.name %>">
+        <!-- <label>Description</label> -->
+        <textarea class="updateIn" name="description" placeholder="description" cols="30" rows="10">
+            <%= data.description %>
+        </textarea>
+        <button class="button">Update</button>
+    </form>
+</div>
